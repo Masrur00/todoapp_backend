@@ -2,17 +2,22 @@ const mongoose = require('mongoose');
 const { connectionString } = require('../config/connection.mongo');
 
 const todoTaskSchema = new mongoose.Schema({
-    text: {
-        type: String,
+    mobile: {
+        type: Number,
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now
+    name: {
+        type: String,
+        require: true,
     },
-    isDone: {
-        type: Boolean,
-        default: false
+    email: {
+        type: string,
+        unique: true,
+        required: true
+    },
+    program: {
+        type: String,
+        default: "Data Science"
     },
      
 },
